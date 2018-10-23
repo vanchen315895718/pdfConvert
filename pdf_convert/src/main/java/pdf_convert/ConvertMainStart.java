@@ -1,18 +1,10 @@
 package pdf_convert;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.PropertySource;
 
 /**
@@ -22,10 +14,10 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootApplication
 @PropertySource("classpath:conf/application.properties")
 public class ConvertMainStart {
-	public static List<String> pdfCache = Collections.synchronizedList(new LinkedList());
+	/*public static List<String> pdfCache = Collections.synchronizedList(new LinkedList());*/
 	
 	public static void main(String[] args) throws IOException {
-		long begin = System.currentTimeMillis();
+		/*long begin = System.currentTimeMillis();
 		ConfigurableApplicationContext  context=SpringApplication.run(ConvertMainStart.class, args);
 		String url=context.getEnvironment().getProperty("convertpdf2jpg.url");
 		System.out.println("扫描目录："+url+" 下的pdf文件开始");
@@ -38,10 +30,15 @@ public class ConvertMainStart {
 		
         System.out.println("转化执行结束>>>>>>>>>>>>>>>>>>>>>>>>>> end");
         long end = System.currentTimeMillis();
-        System.out.println(">>>>>共耗费:"+(end-begin));
+        System.out.println(">>>>>共耗费:"+(end-begin));*/
+        
+        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  springboot开始启动  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        SpringApplication.run(ConvertMainStart.class,args);
+        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  springboot启动成功  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        
     }
 	
-	public static void getPdfUrl(String url) throws IOException{
+/*	public static void getPdfUrl(String url) throws IOException{
 		File file = new File(url);
 		File[] fs = file.listFiles();
 		for(int i = 0; i<fs.length;i++){	
@@ -54,7 +51,7 @@ public class ConvertMainStart {
 					}
 				}		
 		}
-	}
+	}*/
 	
 	
 }
